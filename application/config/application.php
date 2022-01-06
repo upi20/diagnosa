@@ -52,7 +52,7 @@ $config['copyright']     = '2022 Diagnosa Gigi Dan Mulut';
 |
 */
 
-$config['page_setting']   = 'menu-on-top';
+$config['page_setting']   = 'fixed-navigation';
 
 /*
 |--------------------------------------------------------------------------
