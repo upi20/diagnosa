@@ -20,6 +20,7 @@ class Api extends REST_Controller
 		$this->message_fail = 'gagal';
 		$this->load->model('diagnosa/dataModel', 'diagnosa');
 	}
+
 	public function masuk_post()
 	{
 		$this->load->model('apiModel', 'login');
@@ -89,11 +90,13 @@ class Api extends REST_Controller
 		$login 		= $this->registrasi->submit($email, $phone, $username, $password);
 		if ($login) {
 			$message = array(
+				'id'    => $login,
 				'status'    => true,
 				'message'   => 'Daftar berhasil'
 			);
 		} else {
 			$message = array(
+				'id'    => $login,
 				'status'    => false,
 				'message'   => 'Daftar gagal'
 			);

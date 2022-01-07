@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class RegistrasiModel extends CI_Model {
+class RegistrasiModel extends CI_Model
+{
 
-	public function submit($email,$phone,$username,$password)
+	public function submit($email, $phone, $username, $password)
 	{
 		$data['user_nama'] 		= $username;
 		$data['user_password'] 	= $this->b_password->create_hash($password);
@@ -17,11 +18,10 @@ class RegistrasiModel extends CI_Model {
 		$data2['role_user_id'] 	= $exe;
 		$data2['role_lev_id'] 	= 5;
 
-		$exe 					= $this->db->insert('role_users', $data2);
+		$exe1 					= $this->db->insert('role_users', $data2);
 
 		return $exe;
-	}	
-
+	}
 }
 
 /* End of file RegistrasiModel.php */

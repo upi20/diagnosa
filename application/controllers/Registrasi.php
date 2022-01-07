@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Registrasi extends Render_Controller {
+class Registrasi extends Render_Controller
+{
 
 	public function index()
 	{
@@ -24,9 +25,9 @@ class Registrasi extends Render_Controller {
 		$password 	= $this->input->post('password');
 
 		// Cek login ke model
-		$login 		= $this->registrasi->submit($email,$phone,$username,$password);
+		$login 		= $this->registrasi->submit($email, $phone, $username, $password);
 
-		
+
 		$this->output_json(1);
 	}
 
@@ -39,7 +40,6 @@ class Registrasi extends Render_Controller {
 		$this->load->library('plugin');
 		$this->load->helper('url');
 	}
-
 }
 
 /* End of file Registrasi.php */
