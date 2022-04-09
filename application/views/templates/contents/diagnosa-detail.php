@@ -49,16 +49,20 @@
 												<h2 class="text-uppercase"><i class="fa fa-ambulance"></i> PENYAKIT <?= $r['nama'] ?> </h2>
 
 												<!-- CEK HASIL -->
-												<h3>HASIL : <?= ($r['status'] > 0) ? '<button class="btn btn-success">POSITIF </button></h3>' : '<button class="btn btn-danger">NEGATIVE </button></h3>' ?>
+												<h3>HASIL : <?= ($r['status'] > 0) ? '<button class="btn btn-success">POSITIF </button></h3>' : '<button class="btn btn-danger">NEGATIVE </button></h3>' ?></h3>
 
-													<!-- CEK SARAN -->
-													<?php if ($r['status'] > 0) : ?>
-														<h3><?= $r['data']['judul'] ?></h3>
-														<p><?= $r['data']['keterangan'] ?></p>
-													<?php else : ?>
-														<h3>Sepertinya anda terhindar dari penyakit ini</h3>
-													<?php endif; ?>
-													<!-- CEK SARAN -->
+												<?php if ($r['status'] > 0) : ?>
+													<h3>Derajat Kepercayaan : <?= $r['derajat_kepercayaan'] ?> %</h3>
+												<?php endif; ?>
+
+												<!-- CEK SARAN -->
+												<?php if ($r['status'] > 0) : ?>
+													<h3><?= $r['data']['judul'] ?></h3>
+													<p><?= $r['data']['keterangan'] ?></p>
+												<?php else : ?>
+													<h3>Sepertinya anda terhindar dari penyakit ini</h3>
+												<?php endif; ?>
+												<!-- CEK SARAN -->
 											</div>
 										</div>
 									<?php endforeach ?>

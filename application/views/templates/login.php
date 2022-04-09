@@ -74,7 +74,7 @@
 						<div class="hero">
 
 							<div class="pull-left login-desc-box-l" style="width: 100%;">
-								<h4 class="paragraph-header" style="width: auto;">Aplikasi Diagnosa Sistem Pakar Penyakit Menular Seksual (PMS) menggunakan metode Forward Chaining.</h4>
+								<h4 class="paragraph-header" style="width: auto;">Aplikasi Diagnosa Sistem Pakar Penyakit Gigi dan Mulut menggunakan metode Forward Chaining.</h4>
 								<h4 class="paragraph-header" style="width: auto;">Solusi mencegah dan konsultasi kaya ke best frend lah</h4>
 							</div>
 

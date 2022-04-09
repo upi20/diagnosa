@@ -204,6 +204,7 @@ class Api extends REST_Controller
 					'status' => true,
 					'penyakit' => $get_penyakit['nama'],
 					'saran' => $get_penyakit['keterangan'],
+					'derajat_kepercayaan' => $get_penyakit['derajat_kepercayaan'],
 				);
 			} else {
 				$message = array(
@@ -211,6 +212,7 @@ class Api extends REST_Controller
 					'status' => true,
 					'penyakit' => $get_penyakit['nama'],
 					'saran' => $get_penyakit['keterangan'],
+					'derajat_kepercayaan' => $get_penyakit['derajat_kepercayaan'],
 				);
 			}
 		} else {
@@ -219,6 +221,7 @@ class Api extends REST_Controller
 				'status' => false,
 				'penyakit' => 'tidak ada',
 				'saran' => '',
+				'derajat_kepercayaan' => 0,
 			);
 		}
 

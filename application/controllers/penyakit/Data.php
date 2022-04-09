@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Data extends Render_Controller {
+class Data extends Render_Controller
+{
 
 
 	public function index()
@@ -35,12 +36,14 @@ class Data extends Render_Controller {
 		$exe 							= $this->penyakit->getDataDetail($id);
 
 		$this->output_json(
-		[
-			'id' 			=> $exe['id_penyakit'],
-			'nama' 			=> $exe['nama'],
-			'min' 			=> $exe['min_persentase'],
-			'max' 			=> $exe['max_persentase'],
-		]);
+			[
+				'id' 			=> $exe['id_penyakit'],
+				'nama' 			=> $exe['nama'],
+				'min' 			=> $exe['min_persentase'],
+				'max' 			=> $exe['max_persentase'],
+				'derajat_kepercayaan' 			=> $exe['derajat_kepercayaan'],
+			]
+		);
 	}
 
 
@@ -50,17 +53,20 @@ class Data extends Render_Controller {
 		$nama 							= $this->input->post('nama');
 		$min 							= $this->input->post('min');
 		$max 							= $this->input->post('max');
+		$derajat_kepercayaan 							= $this->input->post('derajat_kepercayaan');
 
-		$exe 							= $this->penyakit->insert($nama, $min, $max);
+		$exe 							= $this->penyakit->insert($nama, $min, $max, $derajat_kepercayaan);
 
 		$this->output_json(
-		[
-			'id' 			=> $exe['id'],
-			'code' 			=> $exe['code'],
-			'nama' 			=> $nama,
-			'min' 			=> $min,
-			'max' 			=> $max,
-		]);
+			[
+				'id' 			=> $exe['id'],
+				'code' 			=> $exe['code'],
+				'nama' 			=> $nama,
+				'min' 			=> $min,
+				'max' 			=> $max,
+				'derajat_kepercayaan' 			=> $derajat_kepercayaan,
+			]
+		);
 	}
 
 
@@ -71,17 +77,20 @@ class Data extends Render_Controller {
 		$nama 							= $this->input->post('nama');
 		$min 							= $this->input->post('min');
 		$max 							= $this->input->post('max');
+		$derajat_kepercayaan 							= $this->input->post('derajat_kepercayaan');
 
-		$exe 							= $this->penyakit->update($id, $nama, $min, $max);
+		$exe 							= $this->penyakit->update($id, $nama, $min, $max, $derajat_kepercayaan);
 
 		$this->output_json(
-		[
-			'id' 			=> $id,
-			'code' 			=> $exe['code'],
-			'nama' 			=> $nama,
-			'min' 			=> $min,
-			'max' 			=> $max,
-		]);
+			[
+				'id' 			=> $id,
+				'code' 			=> $exe['code'],
+				'nama' 			=> $nama,
+				'min' 			=> $min,
+				'max' 			=> $max,
+				'derajat_kepercayaan' 			=> $derajat_kepercayaan,
+			]
+		);
 	}
 
 
@@ -93,9 +102,10 @@ class Data extends Render_Controller {
 		$exe 							= $this->penyakit->delete($id);
 
 		$this->output_json(
-		[
-			'id' 			=> $id
-		]);
+			[
+				'id' 			=> $id
+			]
+		);
 	}
 
 
@@ -110,8 +120,6 @@ class Data extends Render_Controller {
 		// Cek session
 		$this->sesion->cek_session();
 	}
-
-
 }
 
 /* End of file Data.php */

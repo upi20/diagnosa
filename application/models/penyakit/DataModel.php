@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class DataModel extends Render_Model {
+class DataModel extends Render_Model
+{
 
-	
+
 	public function getAllData()
 	{
 		$exe 						= $this->db->get('penyakit');
@@ -20,7 +21,7 @@ class DataModel extends Render_Model {
 	}
 
 
-	public function insert($nama, $min, $max)
+	public function insert($nama, $min, $max, $derajat_kepercayaan)
 	{
 		// Auto code config
 		$config['table'] 			= 'penyakit';
@@ -36,6 +37,7 @@ class DataModel extends Render_Model {
 		$data['nama'] 				= $nama;
 		$data['min_persentase'] 	= $min;
 		$data['max_persentase'] 	= $max;
+		$data['derajat_kepercayaan'] 	= $derajat_kepercayaan;
 
 		$exe 						= $this->db->insert('penyakit', $data);
 		$exe2['id'] 				= $this->db->insert_id();
@@ -45,11 +47,12 @@ class DataModel extends Render_Model {
 	}
 
 
-	public function update($id, $nama, $min, $max)
+	public function update($id, $nama, $min, $max, $derajat_kepercayaan)
 	{
 		$data['nama'] 				= $nama;
 		$data['min_persentase'] 	= $min;
 		$data['max_persentase'] 	= $max;
+		$data['derajat_kepercayaan'] 	= $derajat_kepercayaan;
 
 		$exe 						= $this->db->where('id_penyakit', $id);
 		$exe 						= $this->db->update('penyakit', $data);
@@ -66,8 +69,6 @@ class DataModel extends Render_Model {
 
 		return $exe;
 	}
-
-
 }
 
 /* End of file DataModel.php */

@@ -252,19 +252,20 @@ $(() => {
 				})
 			},
 
-			insert(nama, min, max) {
+			insert(nama, min, max, derajat_kepercayaan) {
 				return $.ajax({
 					method: 'post',
 					url: '<?= base_url() ?>penyakit/data/insert',
 					data: {
 						nama: nama,
 						min: min,
+						derajat_kepercayaan: derajat_kepercayaan,
 						max: max
 					}
 				})
 			},
 
-			update(id, nama, min, max) {
+			update(id, nama, min, max, derajat_kepercayaan) {
 				return $.ajax({
 					method: 'post',
 					url: '<?= base_url() ?>penyakit/data/update',
@@ -272,6 +273,7 @@ $(() => {
 						id: id,
 						nama: nama,
 						min: min,
+						derajat_kepercayaan: derajat_kepercayaan,
 						max: max
 					}
 				})

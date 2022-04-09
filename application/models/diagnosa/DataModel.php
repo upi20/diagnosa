@@ -142,6 +142,7 @@ class DataModel extends Render_Model
 			foreach ($where_diagnosa as $w) {
 				$dat['penyakit'] 	= $p['id_penyakit'];
 				$dat['nama'] 		= $p['nama'];
+				$dat['derajat_kepercayaan'] 		= $p['derajat_kepercayaan'];
 				$dat['total'] 		+= (int)$w['nilai'];
 			}
 
@@ -158,6 +159,7 @@ class DataModel extends Render_Model
 				->row_array();
 
 			$dah['penyakit'] 		= $h['penyakit'];
+			$dah['derajat_kepercayaan'] 		= $h['derajat_kepercayaan'];
 			$dah['nama'] 			= $h['nama'];
 			$dah['total'] 			= $h['total'];
 			$dah['status'] 			= ((int)$h['total'] >= (int)$exeh['min_persentase'] or (int)$exeh['max_persentase'] <= (int)$h['total']) ? 1 : 0;
