@@ -74,8 +74,8 @@
 						<div class="hero">
 
 							<div class="pull-left login-desc-box-l" style="width: 100%;">
-								<h4 class="paragraph-header" style="width: auto;">Aplikasi Diagnosa Sistem Pakar Penyakit Gigi dan Mulut menggunakan metode Forward Chaining.</h4>
-								<h4 class="paragraph-header" style="width: auto;">Solusi mencegah dan konsultasi kaya ke best frend lah</h4>
+								<h4 class="paragraph-header" style="width: auto;">Aplikasi Diagnosa Sistem Pakar Penyakit Gigi dan Mulut menggunakan Metode Dempster Shafer</h4>
+								<h4 class="paragraph-header" style="width: auto;">Solusi mencegah dan konsultasi</h4>
 							</div>
 
 						</div>

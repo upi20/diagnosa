@@ -9,7 +9,7 @@
 |
 */
 
-$config['app_name']     = 'Diagnosa Gigi Dan Mulut';
+$config['app_name']     = 'SISTEM PAKAR DIAGNOSIS DINI PENYAKIT GIGI DAN MULUT MENGGUNAKAN METODE DEMPSTER SHAFER';
 
 /*
 |--------------------------------------------------------------------------
